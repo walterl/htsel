@@ -62,6 +62,8 @@ def create_arg_parser():
 
 
 def main():
+    from lxml import html
+
     options = create_arg_parser().parse_args()
     ret_code = 0
     for result in html_select(
