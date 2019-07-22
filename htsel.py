@@ -33,7 +33,10 @@ def html_select(infile, selectors, xpath_selectors=False):
 
 
 def create_arg_parser():
-    parser = argparse.ArgumentParser(description='HTML CSS/XPath selector.')
+    parser = argparse.ArgumentParser(
+        description='Select HTML elements by CSS selector or XPath.',
+    )
+
     parser.add_argument(
         'SELECTOR', nargs='+',
         help='CSS or XPath selectors to apply to input HTML.',
