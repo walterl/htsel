@@ -12,8 +12,6 @@ import argparse
 import sys
 from collections import Iterable
 
-from lxml import html
-
 
 def listify(x):
     if isinstance(x, list):
@@ -26,6 +24,8 @@ def listify(x):
 
 
 def html_select(infile, selectors, xpath_selectors=False):
+    from lxml import html
+
     parsed = html.fromstring(infile.read())
     if xpath_selectors:
         fn_select = parsed.xpath
