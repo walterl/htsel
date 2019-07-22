@@ -4,7 +4,7 @@
 documents.
 
 ```
-usage: htsel.py [-h] [-i INPUT] [-x] SELECTOR [SELECTOR ...]
+usage: htsel [-h] [-i INPUT] [-x] SELECTOR [SELECTOR ...]
 
 Select HTML elements by CSS selector or XPath.
 
@@ -23,20 +23,31 @@ optional arguments:
 Headings on FSF's home page (XPath selector):
 
 ```
-cur -s https://www.fsf.org | ./htsel.py -x '//h2/text()[position() = 1]'
+cur -s https://www.fsf.org | ./htsel -x '//h2/text()[position() = 1]'
 ```
 
 JavaScript files loaded by DuckDuckGo's home page (XPath selector):
 
 ```
-curl -s https://duckduckgo.com | htsel.py -x '//script/@src'
+curl -s https://duckduckgo.com | htsel -x '//script/@src'
 ```
 
 All links with an `href` attribute:
 
 ```
-curl -s https://en.wikipedia.org/wiki/Free_software | htsel.py 'a[href]'
+curl -s https://en.wikipedia.org/wiki/Free_software | htsel 'a[href]'
 ```
+
+# Installation
+
+Tested on Ubuntu 18.04 ("Bionic"):
+
+```
+$ mkvirtualenv -p $(which python3) htsel
+$ pip install git+https://github.com/walterl/htsel
+```
+
+`htsel` can then be executed in the created virtual environment.
 
 # License
 
