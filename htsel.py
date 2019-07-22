@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 
+__title__ = 'htsel'
+__version__ = '0.0.1'
+__license__ = 'GPLv3'
+__summary__ = 'Select HTML elements by CSS selector or XPath'
+__author__ = 'Walter Leibbrandt'
+__email__ = 'htsel_wrl_co_za'
+__uri__ = 'https://github.com/walterl/htsel'
+
 import argparse
 import sys
 from collections import Iterable
