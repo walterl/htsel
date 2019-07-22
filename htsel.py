@@ -66,6 +66,9 @@ def main():
         if isinstance(result, html.HtmlElement):
             result = html.tostring(result, pretty_print=True).decode()
 
+        if isinstance(result, str):
+            result = result.strip()
+
         print(result)
 
     exit(ret_code)
