@@ -26,7 +26,7 @@ def listify(x):
 def html_select(infile, selectors, xpath_selectors=False):
     from lxml import html
 
-    parsed = html.fromstring(infile.read())
+    parsed = html.fromstring(infile.read().encode())
     if xpath_selectors:
         fn_select = parsed.xpath
     else:
