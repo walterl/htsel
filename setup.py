@@ -13,7 +13,7 @@ with open('requirements.txt') as req:
 
 setup(
     name='htsel',
-    version='0.0.1',
+    version=htsel.__version__,
 
     author=htsel.__author__,
     author_email=htsel.__email__,
